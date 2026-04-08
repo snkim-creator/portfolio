@@ -44,7 +44,25 @@ MySQL 데이터베이스에서 데이터를 추출하여 Google Cloud Storage에
 
 ---
 
-### 2. Airflow Task 실패 이메일 알림 시스템 구축
+### 2. Google Drive 데이터 업로드 자동화
+> `Python` `Google Drive API` `OAuth2` `Crontab` `FTP`
+
+매주 반복되는 MariaDB 데이터 수동 업로드 업무를 자동화한 프로젝트입니다.
+
+**주요 구현 내용**
+- Google Drive API v3 + OAuth2 서비스 계정 기반 인증 구현
+- Access Token 만료 시 Refresh Token으로 자동 갱신하여 무인 실행 환경 대응
+- FTP를 통한 DB 서버 간 파일 전송 후 Google Drive 업로드
+- 파일별 다운로드/복사/공유 권한 세밀하게 설정
+- 업로드 후 파일 소유권 담당자 계정으로 자동 이전
+- Crontab 스케줄로 주 1회 자동 실행
+- 연도/주차 기반 파일명 자동 생성 (예: FILE1_2026_15.csv)
+
+📁 [google-drive-upload](./data-engineering/google-drive-upload)
+
+---
+
+### 3. Airflow Task 실패 이메일 알림 시스템 구축
 > `Airflow` `AWS SES` `SMTP` `AWS IAM`
 
 데이터 파이프라인 운영 중 Task 실패 시 자동으로 이메일 알림을 전송하는 시스템을 구축하였습니다.
@@ -114,7 +132,11 @@ portfolio/
 ├── data-engineering/
 │     ├── airflow-etl/
 │     │     ├── README.md
-│     │     └── salesdata_mysql_to_gcs.py
+│     │     └── airflow_dag_mysql_to_gcs.py
+│     │
+│     ├── google-drive-upload/
+│     │     ├── README.md
+│     │     └── google_drive_upload.py
 │     │
 │     └── airflow-email-alert/
 │           └── README.md
