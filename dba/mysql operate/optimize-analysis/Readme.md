@@ -2,7 +2,7 @@
 
 ## 개요
 
-운영 중인 MariaDB 서버의 전체 테이블을 대상으로 `DATA_FREE` 기반 fragmentation 상태를 분석하고,  
+현재 운영 중인 MariaDB 서버의 전체 테이블을 대상으로 `DATA_FREE` 기반 fragmentation 상태를 분석하고,  
 실무 관점의 OPTIMIZE 실행 기준을 수립한 프로젝트입니다.
 
 ---
