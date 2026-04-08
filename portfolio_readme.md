@@ -132,7 +132,7 @@ portfolio/
 ├── data-engineering/
 │     ├── airflow-etl/
 │     │     ├── README.md
-│     │     └── airflow_dag_mysql_to_gcs.py
+│     │     └── salesdata_mysql_to_gcs.py
 │     │
 │     ├── google-drive-upload/
 │     │     ├── README.md
@@ -142,6 +142,9 @@ portfolio/
 │           └── README.md
 │
 └── dba/
+      ├── mysql-to-oracle-migration/
+      │     ├── README.md
+      │     └── mysql_to_oracle.ksh
       ├── monitoring/
       │     └── README.md
       ├── optimize-analysis/
