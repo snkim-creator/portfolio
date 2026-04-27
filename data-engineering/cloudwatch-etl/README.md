@@ -176,3 +176,4 @@ cursor.executemany(insert_query, values)
 - CSV 중간 저장 제거 → CloudWatch 결과를 메모리에서 직접 ColumnStore로 적재
 - Watermark 패턴 적용 → 중복 적재 방지 (현재는 매 시간 전량 재적재)
 - DAG `execution_date` 기반으로 쿼리 시간 범위 동적 계산
+- get_query_results_iter 에서 Running 상태일때 루프가 계속 도는 과정에서 불필요한 API 호출을 줄이기 위해 polling 대기 로직으로 만들어야 할 것 같음. 
