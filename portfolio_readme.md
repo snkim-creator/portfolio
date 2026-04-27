@@ -123,6 +123,23 @@ MariaDB 10.11.9 운영 환경에서 Lock 분석, 쿼리 성능 확인, 장애 �
 
 ---
 
+### 6. AWS CloudWatch Logs → ColumnStore ETL 파이프라인
+> `Airflow` `Python` `AWS CloudWatch Logs Insights` `Pandas` `MariaDB ColumnStore`
+
+AWS CloudWatch에 적재된 HAProxy Access Log, Tomcat Error Log를 매 시간 자동 수집하여 MariaDB ColumnStore(DW)에 적재하는 ETL 파이프라인을 설계 및 구현하였습니다.
+
+**주요 구현 내용**
+- CloudWatch Logs Insights 쿼리 실행 → 결과 수집 → ColumnStore 적재 3단계 Task 설계
+- XCom을 활용한 Task 간 `query_id` 전달 (비동기 쿼리 결과 조회 패턴)
+- 제너레이터 패턴으로 배치 단위 결과 처리 (메모리 효율화)
+- HAProxy 로그 17개 컬럼 파싱 및 Tomcat ERROR 로그 trace_id/span_id 구조화
+- pandas `executemany()` 기반 일괄 적재로 성능 최적화
+- CloudWatch Insights 쿼리는 인프라 담당자와 협업하여 작성
+
+📁 [cloudwatch-etl](./data-engineering/cloudwatch-etl)
+
+---
+
 ## Repository Structure
 
 ```
