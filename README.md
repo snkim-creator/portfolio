@@ -99,6 +99,19 @@
 
 ---
 
+---
+
+### 8. AWS CloudWatch Logs ETL 파이프라인 구축
+
+- HAProxy Access Log, Tomcat Error Log를 CloudWatch Logs Insights에서 매 시간 자동 수집
+- CloudWatch Logs Insights 쿼리 실행 → 배치 수집 → ColumnStore 적재 3단계 DAG 설계
+- XCom 기반 Task 간 query_id 전달 (비동기 쿼리 결과 조회 패턴 적용)
+- 제너레이터 패턴으로 배치 단위 결과 처리 및 pandas executemany() 기반 일괄 적재
+- HAProxy 로그 17개 컬럼 파싱, Tomcat ERROR 로그 trace_id/span_id 구조화 적재
+- 인프라 담당자와 협업하여 CloudWatch Insights 쿼리 작성
+
+---
+
 ## 기술 스택
 
 | 분야 | 기술 |
