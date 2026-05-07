@@ -59,6 +59,7 @@ def get_last_id(cursor, table_name: str) -> int:
 ```
 
 GCS 업로드 완료 후에만 Watermark를 커밋하여 업로드 실패 시 데이터 누락을 방지하였습니다.
+
 2026.05.07 : 실제로 소스 DB 서버가 OCI 강제 메인터넌스로인한 셧다운이 있었고, DAG 실패 알람을 받았습니다.
              Watermark가 잘 실행된다면 다음날 DAG때 기존 데이터도 받을 수 있을 거라 생각했고, 
              실제로 다음 날 Watermark가 잘 실행되어 데이터 누락 없이 DAG 성공
