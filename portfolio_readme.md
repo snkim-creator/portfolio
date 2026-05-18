@@ -119,7 +119,7 @@ MariaDB 10.11.9 운영 환경에서 Lock 분석, 쿼리 성능 확인, 장애 �
 - Lock 발생 시 문제 쿼리 추적을 위한 조회 SQL 세트 작성
 - stage 계열은 상시 OFF, 장애 시만 활성화하는 보수적 운영 기준 적용
 
-📁 [dba/performance-schema](./dba/mysql operate/performance-schema)
+📁 [dba/performance-schema](./dba/mysql operate/performance-schema/MairDB 10.11.9 Guide.md)
 
 ---
 
