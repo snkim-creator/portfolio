@@ -6,7 +6,7 @@ MariaDB DBA 5년차로 데이터 엔지니어링 업무를 병행하고 있습�
 데이터베이스 운영 경험을 바탕으로 안정적인 데이터 파이프라인 설계와 운영에 관심이 있습니다.
 
 - **Email** : clfska123@gmail.com
-- **Certifications** : AWS SAA, SQLD
+- **Certifications** : AWS SAA, SQLD, 정보처리기사
 
 ---
 
