@@ -104,7 +104,7 @@ MySQL 데이터베이스에서 데이터를 추출하여 Google Cloud Storage에
 - 즉시 실행 대신 추세 모니터링이 적합한 근거를 분석 문서로 정리
 - OPTIMIZE 후보 자동 추출 SQL 및 실행 스크립트 작성
 
-📁 [dba/optimize-analysis](./dba/mysql operate/optimize-analysis)
+📁 [dba/optimize-analysis](.dba/mysql_operate/optimize-analysis)
 
 ---
 
@@ -119,7 +119,7 @@ MariaDB 10.11.9 운영 환경에서 Lock 분석, 쿼리 성능 확인, 장애 �
 - Lock 발생 시 문제 쿼리 추적을 위한 조회 SQL 세트 작성
 - stage 계열은 상시 OFF, 장애 시만 활성화하는 보수적 운영 기준 적용
 
-📁 [dba/performance-schema](./dba/mysql operate/performance-schema/MairDB 10.11.9 Guide.md)
+📁 [dba/performance-schema](./dba/mysql_operate/performance-schema/MairDB_10.11.9_Guide.md)
 
 ---
 
