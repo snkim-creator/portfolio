@@ -131,8 +131,6 @@
 
 ---
 
----
-
 ### 8. AWS CloudWatch Logs ETL 파이프라인 구축
 
 ### 프로젝트 계기
@@ -172,4 +170,4 @@
 | Monitoring | Prometheus, Grafana, sql_exporter |
 | BI | Apache Superset, Tableau |
 | Language | Python, Shell Script, SQL |
-| Certifications | AWS SAA, SQLD |
+| Certifications | AWS SAA, SQLD, 정보처리기사 |
