@@ -135,12 +135,30 @@
 
 ### 8. AWS CloudWatch Logs ETL 파이프라인 구축
 
+### 프로젝트 계기
+사내 시스템 로그가 AWS CloudWatch Logs에서만 조회 가능하여 접근성이 제한적이었고, Logs Insights 기반의 복잡한 쿼리를 직접 작성해야 하는 불편함이 존재했습니다.
+개발자 및 PM 조직에서도 시스템 로그 데이터를 보다 쉽게 조회하고 분석할 수 있도록 로그 ETL 파이프라인 구축 프로젝트를 진행하였습니다.
+
+#### 주요 구현 내용
 - HAProxy Access Log, Tomcat Error Log를 CloudWatch Logs Insights에서 매 시간 자동 수집
 - CloudWatch Logs Insights 쿼리 실행 → 배치 수집 → ColumnStore 적재 3단계 DAG 설계
 - XCom 기반 Task 간 query_id 전달 (비동기 쿼리 결과 조회 패턴 적용)
 - 제너레이터 패턴으로 배치 단위 결과 처리 및 pandas executemany() 기반 일괄 적재
 - HAProxy 로그 17개 컬럼 파싱, Tomcat ERROR 로그 trace_id/span_id 구조화 적재
 - 인프라 담당자와 협업하여 CloudWatch Insights 쿼리 작성
+
+#### 성과
+- 장애 발생 시 시스템 엔지니어 외 개발자, PM 조직에서도 로그 데이터를 직접 조회 및 활용 가능하도록 데이터 접근성 개선
+- CloudWatch Logs 직접 조회 없이 DW 기반 SQL 조회 환경 및 Apache Superset을 활용할 수 있는 환경 제공
+- 로그 데이터 구조화를 통해 장애 분석 및 서비스 이슈 추적 효율 향상
+- 반복적인 Logs Insights 조회 작업 감소 및 분석 생산성 향상
+
+#### 회고
+기술적으로는 로그 접근성과 분석 편의성을 개선할 수 있었지만, 실제 조직 내 활용도는 기대보다 높지 않았습니다.
+
+기존에는 개발자 조직이 시스템 엔지니어에게 직접 로그 조회를 요청하는 방식으로 운영되고 있었으며, 해당 프로세스가 사용자 입장에서 충분히 큰 불편으로 인식되지 않았던 점이 주요 원인이었습니다.
+
+이 경험을 통해 단순히 기술적으로 우수한 시스템을 만드는 것뿐만 아니라, 실제 사용자의 Pain Point와 조직의 업무 흐름을 함께 고려하는 것이 중요하다는 점을 배울 수 있었습니다.
 
 ---
 
