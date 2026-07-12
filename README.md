@@ -170,4 +170,4 @@
 | Monitoring | Prometheus, Grafana, sql_exporter |
 | BI | Apache Superset, Tableau |
 | Language | Python, Shell Script, SQL |
-| Certifications | AWS SAA, SQLD, 정보처리기사 |
+| Certifications | AWS DEA, AWS SAA, SQLD, 정보처리기사 |
