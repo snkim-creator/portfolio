@@ -104,7 +104,7 @@ MySQL 데이터베이스에서 데이터를 추출하여 Google Cloud Storage에
 - 즉시 실행 대신 추세 모니터링이 적합한 근거를 분석 문서로 정리
 - OPTIMIZE 후보 자동 추출 SQL 및 실행 스크립트 작성
   
-📁 [dba/optimize-analysis](.dba/mysql_operate/optimize-analysis)
+📁 [dba/optimize-analysis](./dba/mysql_operate/optimize-analysis)
 
 ---
 
