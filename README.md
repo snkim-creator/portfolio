@@ -29,7 +29,22 @@
 
 ---
 
-### 2. MySQL → Oracle 데이터 마이그레이션
+### 2. DBInsight — AI 기반 Database Health Reporting
+
+- **MySQL/MariaDB의 Performance Schema 및 Global Status를 주기적으로 수집·분석하여 DBA용 Daily Health Report를 자동 생성하는 개인 프로젝트**
+- SQL Digest, Connection, Transaction, Lock, InnoDB 상태 데이터를 Snapshot 형태로 저장하고 기간별 변화량(Delta) 분석
+- 누적 Counter를 그대로 사용하지 않고 Snapshot 간 Delta를 계산하여 실제 분석 기간의 부하를 기준으로 리포팅
+- 7일 Median / P95 기반 Baseline 비교를 통해 평소 대비 이상 징후 탐지
+- SQL 평균 응답시간, Rows Examined, 실행 횟수 등의 변화를 비교하여 **SQL Regression 후보 탐지**
+- Finding을 `NEW / PERSISTENT / RESOLVED` 상태로 관리하여 신규·지속·해소 이슈 구분
+- Rule Engine에서 이상 징후를 먼저 판별한 뒤 LLM은 결과 설명 및 우선순위 정리에만 활용하도록 역할 분리
+- 실제 운영 정보가 포함되지 않은 샘플 데이터와 설정을 사용하여 GitHub 포트폴리오 형태로 구성
+
+> **GitHub:** [DBInsight](./DBInsight)
+
+---
+
+### 3. MySQL → Oracle 데이터 마이그레이션
 
 - **고객사 요청으로 MySQL → Oracle 데이터 마이그레이션 ksh 스크립트 제작 및 납품**
 - GB 중규모의 데이터 실제 운영 환경에서 성공적으로 마이그레이션 완료
@@ -41,7 +56,7 @@
 
 ---
 
-### 3. 백업 자동화 시스템 구축
+### 4. 백업 자동화 시스템 구축
 
 - mysqldump, Mariabackup, Binary Log 기반 백업 체계 구축 및 운영
 - **AWS SSM Parameter Store + Run Command + EventBridge 기반 Cross-Account DB 백업 자동화 설계 및 주도**
@@ -52,7 +67,7 @@
 
 ---
 
-### 3. DB 보안 관리 및 접근 제어
+### 5. DB 보안 관리 및 접근 제어
 
 - AWS EC2 Security Group 기반 IP/Port 단위 인바운드·아웃바운드 접근 제어
 - DB 접속 계정 생성 및 권한 관리 (최소 권한 원칙 적용)
@@ -62,7 +77,7 @@
 
 ---
 
-### 4. 모니터링 시스템 구축
+### 6. 모니터링 시스템 구축
 
 - Prometheus + Grafana 기반 MariaDB 모니터링 대시보드 구축
 - sql_exporter를 활용한 커스텀 메트릭 추가 (InnoDB Lock Wait 수 등)
@@ -70,7 +85,7 @@
 
 ---
 
-### 5. Airflow 기반 데이터 파이프라인 설계 및 운영
+### 7. Airflow 기반 데이터 파이프라인 설계 및 운영
 
 #### 프로젝트 계기
 
@@ -102,7 +117,7 @@
 
 ---
 
-### 6. Google Drive 데이터 업로드 자동화
+### 8. Google Drive 데이터 업로드 자동화
 
 #### 프로젝트 계기
 사내 일부 부서에 통계 데이터를 주기적으로 Google Drive를 통해 전달하는 업무가 반복적으로 수작업 처리되고 있었으며, 데이터 요청 및 전달 과정에서 운영 효율이 떨어지는 문제를 확인하여 자동화 프로젝트를 진행하였습니다.
@@ -123,7 +138,7 @@
   
 ---
 
-### 7. BI 대시보드 구축 및 셀프서비스 환경 구축
+### 9. BI 대시보드 구축 및 셀프서비스 환경 구축
 
 - Apache Superset, Tableau를 활용한 데이터 시각화 및 BI 대시보드 구축
 - 제품 사용 통계, 에러 발생 현황, 신규 고객 추이, 로그인 통계, 실시간 현황 등 대시보드 제작
@@ -131,7 +146,7 @@
 
 ---
 
-### 8. AWS CloudWatch Logs ETL 파이프라인 구축
+### 10. AWS CloudWatch Logs ETL 파이프라인 구축
 
 ### 프로젝트 계기
 사내 시스템 로그가 AWS CloudWatch Logs에서만 조회 가능하여 접근성이 제한적이었고, Logs Insights 기반의 복잡한 쿼리를 직접 작성해야 하는 불편함이 존재했습니다.
