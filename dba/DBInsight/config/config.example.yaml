@@ -1,0 +1,94 @@
+# DBInsight sample configuration.
+# Copy this file to config/config.yaml and edit it for your environment.
+# config/config.yaml is ignored by Git.
+
+defaults:
+  port: 3306
+  user: db_monitor
+  password_env: DB_PASSWORD
+  database: performance_schema
+  charset: utf8mb4
+  connect_timeout: 10
+
+servers:
+  # Local/test database example
+  - name: sample-db-01
+    host: 127.0.0.1
+
+  # Additional targets can override defaults as needed.
+  # 192.0.2.0/24 is a documentation-only address range.
+  # - name: sample-db-02
+  #   host: 192.0.2.11
+  #   user: db_monitor_alt
+  #   password_env: DB_PASSWORD_02
+
+collector:
+  interval_minutes: 10
+  sql_digest_top_n: 50
+  table_io_top_n: 30
+
+storage:
+  db_path: ./data/dbinsight.db
+
+report:
+  output_directory: ./reports
+  analysis_window_hours: 24
+
+logging:
+  file: ./logs/app.log
+  level: INFO
+
+analyzer:
+  baseline:
+    days: 7
+    min_samples: 20
+  thresholds:
+    connection_usage:
+      info: 0.70
+      warning: 0.80
+      critical: 0.90
+    threads_running:
+      spike_ratio: 3
+      min_absolute: 10
+    tmp_disk_table_ratio:
+      warning: 0.20
+    buffer_pool_hit_ratio:
+      info: 0.99
+      warning: 0.95
+    dirty_page_ratio:
+      warning: 0.75
+    slow_query_rate:
+      warning: 0.5
+    lock_wait:
+      warning: 1
+    sql_rows_examined:
+      ratio: 100
+      min_executions: 1000
+    sql_latency_spike:
+      increase_ratio: 3.0
+      min_executions: 100
+    long_transaction:
+      warning: 60
+      critical: 300
+    sql_regression:
+      latency_ratio: 3.0
+      min_executions: 100
+      min_baseline_days: 3
+      top_n: 10
+    history_list_length:
+      warning_ratio: 3
+      min_absolute: 10000
+    replication:
+      lag_warning: 30
+      lag_critical: 300
+
+# OpenAI-compatible API example.
+# The provider/model can be replaced with any compatible endpoint approved for your environment.
+ai:
+  provider: kimi
+  base_url: https://api.moonshot.ai/v1
+  model: moonshot-v1-8k
+  api_key_env: AI_API_KEY
+  temperature: 0.3
+  timeout_seconds: 60
+  language: ko
