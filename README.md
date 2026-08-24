@@ -40,7 +40,7 @@
 - Rule Engine에서 이상 징후를 먼저 판별한 뒤 LLM은 결과 설명 및 우선순위 정리에만 활용하도록 역할 분리
 - 실제 운영 정보가 포함되지 않은 샘플 데이터와 설정을 사용하여 GitHub 포트폴리오 형태로 구성
 
-> **GitHub:** [DBInsight](./DBInsight)
+> **GitHub:** [DBInsight](./dba/DBInsight)
 
 ---
 
