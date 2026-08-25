@@ -184,5 +184,6 @@
 | Cloud | AWS (EC2, S3, Lambda, EventBridge, SSM, SES), GCP (Cloud Storage) |
 | Monitoring | Prometheus, Grafana, sql_exporter |
 | BI | Apache Superset, Tableau |
-| Language | Python, Shell Script, SQL |
+| DevOps / Automation | Ansible, Shell Script |
+| Language | Python, SQL |
 | Certifications | AWS DEA, AWS SAA, SQLD, 정보처리기사 |
