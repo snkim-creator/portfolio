@@ -76,7 +76,7 @@ MySQL 데이터베이스에서 데이터를 추출하여 Google Cloud Storage에
 
 ---
 
-### 3. Prometheus 커스텀 메트릭 구축 (MariaDB InnoDB Lock Wait)
+### 4. Prometheus 커스텀 메트릭 구축 (MariaDB InnoDB Lock Wait)
 > `Prometheus` `Grafana` `sql_exporter` `MariaDB`
 
 기본 `mysqld_exporter`에서 제공하지 않는 InnoDB Lock Wait 수를 커스텀 메트릭으로 수집하는 모니터링 시스템을 구축하였습니다.
@@ -92,7 +92,7 @@ MySQL 데이터베이스에서 데이터를 추출하여 Google Cloud Storage에
 
 ---
 
-### 4. MariaDB 테이블 Fragmentation 분석 및 OPTIMIZE 운영 기준 수립
+### 5. MariaDB 테이블 Fragmentation 분석 및 OPTIMIZE 운영 기준 수립
 > `MariaDB` `SQL` `DBA`
 
 운영 중인 MariaDB 서버의 210개 테이블 전체를 대상으로 `DATA_FREE` 기반 fragmentation 상태를 분석하고, 실무 관점의 OPTIMIZE 실행 기준을 수립하였습니다.
@@ -108,7 +108,7 @@ MySQL 데이터베이스에서 데이터를 추출하여 Google Cloud Storage에
 
 ---
 
-### 5. MariaDB Performance Schema 운영 가이드 수립
+### 6. MariaDB Performance Schema 운영 가이드 수립
 > `MariaDB` `Performance Schema` `DBA`
 
 MariaDB 10.11.9 운영 환경에서 Lock 분석, 쿼리 성능 확인, 장애 대응을 목적으로 Performance Schema 설정 기준과 운영 가이드를 수립하였습니다.
@@ -123,7 +123,7 @@ MariaDB 10.11.9 운영 환경에서 Lock 분석, 쿼리 성능 확인, 장애 �
 
 ---
 
-### 6. AWS CloudWatch Logs → ColumnStore ETL 파이프라인
+### 7. AWS CloudWatch Logs → ColumnStore ETL 파이프라인
 > `Airflow` `Python` `AWS CloudWatch Logs Insights` `Pandas` `MariaDB ColumnStore`
 
 AWS CloudWatch에 적재된 HAProxy Access Log, Tomcat Error Log를 매 시간 자동 수집하여 MariaDB ColumnStore(DW)에 적재하는 ETL 파이프라인을 설계 및 구현하였습니다.
